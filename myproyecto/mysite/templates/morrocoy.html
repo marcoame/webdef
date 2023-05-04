@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Our Researchers</title> 
+        <link href="./static/css/styles.css" rel="stylesheet">
+        <link rel="icon" href="./images/myicon.png">
+	</head>
+
+    <body>
+        <header class="desktop">
+            <a href="./index.html">
+                <img class="logo" src="./static/images/mylogo.png" alt="Logo">
+            </a>
+            <nav>
+                <ul class="ul_nav">
+                    <li><a href="./index.html">MAIN PAGE</a></li>
+                    <li><a href="https://www.ntnu.no/">NTNU</a></li>
+                    <li><a href="https://www.ntnu.no/kontakt">CONTACT</a></li>
+                </ul>  
+            </nav>
+            <div>
+                <a class="button_nav_1" href="#">Iniciar Sesión</a>
+                <a class="button_nav_2" href="#">Registrarse</a>                
+            </div>
+        </header>
+
+        <header class="tablet_mobile">
+            <div class="dropdown">
+                <button onclick="dropButton()" class="menu-button">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="./index.html">MAIN PAGE</a>
+                    <a href="https://www.ntnu.edu/">NTNU</a>
+                    <a href="https://www.ntnu.no/kontakt">CONTACT</a>
+                </div>
+            </div>
+            <a href="./index.html">
+                <img class="logo" src="./static/images/mylogo.png" alt="Logo">
+            </a>
+            <a class="button_nav_1" href="#">Login</a>
+        </header>
+
+        <main>
+            <div class="ubi_sec_1">
+                <img class="ubi_sec_1_img" src="./static/images/mylab.jpeg" alt="Morrocoy">
+                <div class="ubi_sec_1_text">
+                    <h1>Our Researchers</h1>
+                    
+                    <div class="sec_search">
+                        <form>
+                            <input class="input_search" type="text" id="buscador" name="buscador" placeholder="Search Researchers">
+                        </form>
+                        <a class="button_search" href="#">Search</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="ubi_sec_2">
+                <div class="columns_2">
+                    
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="foot_text_1">El Cofre del Viajero</p>  
+            <div class="div_footer_parent">
+                <div class="div_footer_child">
+                    <p class="foot_text_2">FAQ</p>
+                    <img class="social_icons" src="./static/images/social_instagram.png.png" alt="Instagram">
+                    <img class="social_icons" src="./static/images/social_youtube.png.png" alt="Youtube">
+                    <img class="social_icons" src="./static/images/social_facebook.png.png" alt="Facebook">
+                </div>
+                <div class="div_footer_child">
+                    <p class="foot_text_2">Terminos y Condiciones</p>
+                </div>
+            </div>       
+        </footer>
+        <script>
+            /*Botón Menú*/
+            function dropButton() 
+            {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Cerrar botón al tocar fuera
+            window.onclick = function(event) 
+            {
+                if (!event.target.matches('.menu-button')) 
+                {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) 
+                    {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) 
+                        {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }  
+        </script>
+    </body>
+</html>

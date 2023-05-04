@@ -1,0 +1,1098 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* OTROS */
+body
+{
+    margin:0;
+}
+
+h1
+{
+    font-family:"Montserrat", sans-serif;
+    font-weight:bold;
+    font-size:26px;
+}
+
+/* MENU DE NAVEGACION */
+header
+{
+    background-color:rgb(36, 37, 42);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 15%;
+}
+
+.logo
+{
+    cursor:pointer;
+}
+
+.ul_nav
+{
+    list-style:none;
+}
+
+.ul_nav li
+{
+    display:inline-block;
+    padding:0px 20px;
+}
+
+.ul_nav li a
+{
+    text-decoration:none;   
+    color:white; 
+    font-family:"Montserrat", sans-serif;
+    font-weight:500;
+    font-size:16px;
+}
+
+.ul_nav li a:hover
+{
+    color:rgb(88, 178, 205);
+}
+
+.button_nav_1
+{
+    text-decoration:none;
+    background-color:white;
+    color:rgb(36, 37, 42);
+    border:none;
+    padding:10px 15px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    border-radius:12px;    
+}
+
+
+
+
+
+
+.button_nav_1:hover
+{
+    background-color:rgb(231, 231, 231);
+}
+
+.button_nav_2
+{
+    text-decoration:none;
+    background-color:rgb(88, 178, 205);
+    color:rgb(36, 37, 42);
+    border:none;
+    padding:10px 15px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    border-radius:12px;
+    margin-left:10px;  
+}
+
+.button_nav_2:hover
+{
+    background-color:rgb(108, 114, 114);
+}
+
+.background-gold
+{
+    height:20px;
+    background-color:rgb(88, 178, 205);
+}
+/* SECCION 1 */
+.sec_1
+{
+    height:554px;
+    width:100%;
+}
+
+.div_h1_map
+{
+    height:50px;
+    width:100%;
+}
+
+.div_map
+{
+    height:504px;
+    width:100%;
+    display:flex;
+    align-items:center;
+}
+
+
+.container {
+    height:504px;
+    width:100%;
+    display:flex;
+    align-items:center;
+  }
+  
+  /* Make the image responsive */
+
+  
+  /* Style the button and place it in the middle of the container/image */
+  .container .btn {
+    position: absolute;
+    top: 400px;
+    left: 600px;
+
+    display: flex;
+    background-color: rgb(88, 178, 205);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    
+  }
+
+
+
+  .container .btn:hover {
+    background-color: rgb(108, 114, 114);
+  }
+
+
+  .container .btn2 {
+    position: absolute;
+    top: 340px;
+    left: 600px;
+
+    display: flex;
+    background-color: rgb(88, 178, 205);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+
+
+
+  .container .btn2:hover {
+    background-color: rgb(108, 114, 114);
+  }
+
+
+  .container .btn3 {
+    position: absolute;
+    top: 460px;
+    left: 600px;
+
+    display: flex;
+    background-color:rgb(88, 178, 205);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+
+
+
+  .container .btn3:hover {
+    background-color: rgb(108, 114, 114);;
+  }
+
+
+
+
+
+
+
+
+.h1_map
+{
+    margin-left:10%;
+}
+
+.map_venezuela
+{
+    width:360px;
+    height:360px;
+    margin:auto;
+    display:block;
+    transform:scale(1.4); 
+}   
+
+/* SECCION 2 */
+.sec_2
+{
+    margin-top:50px;
+    text-align:center;
+    width:75%;
+    margin-left:12.5%;
+    margin-right:15.5%;
+}
+
+.sec_search
+{
+    display:flex;
+    justify-content:center;
+}
+
+
+
+.button_search
+{
+    text-decoration:none;
+    background-color:rgb(88, 178, 205);
+    color:rgb(36, 37, 42);
+    border-style:solid;
+    border-width:2px;
+    border-left:none;
+    border-color:grey;
+    padding:6px 15px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer; 
+    
+}
+
+.button_search:hover
+{
+    background-color:rgb(108, 114, 114);
+}
+
+.input_search
+{
+    height:30px;
+    width:500px;
+    border-style:solid;
+    border-color:grey;
+}
+
+/* SECCION 3 */
+.sec_3
+{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction:column;
+    margin-top:50px;
+    text-align:center;
+    width:75%;
+    margin-left:12.5%;
+    margin-right:12.5%;
+}
+
+.columns
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:668px;
+    height:1450px;
+    padding-left:50px;
+    padding-right:50px;
+}
+
+.colum
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:200px;
+    height:1300px;
+}
+
+.experience
+{
+    width:100%;
+    height:300px;
+    background-color:ghostwhite;
+}
+
+.exp_img
+{
+    width:100%;
+    height:200px;
+}
+
+.exp_text_title
+{
+    font-size:18px;
+    margin-left:7px;
+    margin-right:7px;    
+}
+
+.exp_text
+{
+    font-size:17px;
+    margin-left:7px;
+    margin-right:7px;
+}
+
+/* FOOTER */
+footer
+{
+    background-color:rgb(36, 37, 42);
+    height:125px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-left:15%;
+    padding-right:5%;
+    margin-top:50px;
+}
+
+.foot_text_1
+{
+    color:rgb(88, 178, 205); 
+    font-family:"Montserrat", sans-serif;
+    font-weight:bold;
+    font-size:26px;    
+}
+
+.foot_text_2
+{
+    color:rgb(88, 178, 205); 
+    font-family:"Montserrat", sans-serif;
+    font-weight:bold;
+    font-size:18px;    
+}
+
+.div_footer_parent
+{
+    height:80px;
+    width:35%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.div_footer_child
+{
+    height:32px;
+    width:80%;
+    display:flex;
+    align-items:center;
+}
+
+.social_icons
+{
+    margin-left:10%;
+}
+
+/* UBI - SEC1 */
+.ubi_sec_1
+{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;  
+}
+
+.ubi_sec_1_img
+{
+    width:100%;
+    height:400px;
+}
+
+.ubi_sec_1_text
+{
+    background-color:ghostwhite;
+    padding-left:2.5%;
+    padding-right:2.5%;
+    margin-top:30px;
+    width:60%;
+}
+
+
+
+.ubi_text
+{
+    font-family:"Montserrat", sans-serif;
+    font-weight:500px;
+    font-size:18px; 
+}
+
+/* UBI - SEC2 */
+.ubi_sec_2
+{
+    margin-top:50px;
+    margin-left:20%;
+    margin-right:20%;
+}
+
+.columns_2
+{
+    display:flex;
+    
+    align-items:center;
+    justify-content:center;
+}
+
+
+.colum_2
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:170px;
+    height:400px;
+}
+
+.media
+{
+    width:100%;
+    height:200px;
+}
+
+header.tablet_movile
+{
+    background-color:rgb(36, 37, 42);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 10%;
+}
+
+/* Botón Menú */
+.menu-button
+{
+    text-decoration:none;
+    background-color:white;
+    color:rgb(36, 37, 42);
+    border:none;
+    padding:10px 15px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+    border-radius:12px;  
+}
+
+.menu-button:hover
+{
+    background-color:rgb(231, 231, 231);
+}
+
+.dropdown 
+{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content 
+{
+    display:none;
+    position:absolute;
+    background-color:white;
+    min-width:160px;
+    overflow:auto;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    font-family:Arial,sans-serif;
+    font-size:10px;
+}
+
+.dropdown-content a 
+{
+    color:black;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+}
+
+.dropdown a:hover 
+{
+	background-color:rgb(36, 37, 42);
+    color:white;
+}
+
+.show 
+{
+	display:block;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 1051px)
+{
+    /* Menu nav responsive (adicional) */
+    header.tablet_mobile
+    {
+        display:none;
+    }
+
+}
+@media screen and (max-width: 1050px)
+{
+    /* Menu nav responsive (adicional) */
+    header.desktop
+    {
+        display:none;
+    }
+
+    /* Otras */
+    .columns_2
+    {
+        flex-direction:column;
+    }
+
+
+
+
+    .colum_2
+    {
+        margin-bottom:120px;
+        width:400px;
+        height:920px;
+    }
+
+    .media
+    {
+        height:400px;
+    }
+
+}
+
+/* Requisitos Enunciado Responsive */
+
+@media screen and (max-width: 1230px){
+
+    .container .btn
+    {
+
+
+            position: absolute;
+            top: 400px;
+            left: 470px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+    .container .btn2
+    {
+
+
+            position: absolute;
+            top: 350px;
+            left: 470px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+    
+    
+    .container .btn3
+    {
+
+
+            position: absolute;
+            top: 450px;
+            left: 470px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+}
+
+
+
+@media screen and (max-width: 960px){
+
+    .container .btn
+    {
+
+
+            position: absolute;
+            top: 400px;
+            left: 350px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+    .container .btn2
+    {
+
+
+            position: absolute;
+            top: 350px;
+            left: 350px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+    
+    
+    .container .btn3
+    {
+
+
+            position: absolute;
+            top: 450px;
+            left: 350px;
+        
+            display: flex;
+            ;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px)
+{
+    .sec_1
+    {
+        height:443px;
+    }
+
+    .container .btn
+    {
+
+
+            position: absolute;
+            top: 320px;
+            left: 290px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 12px;
+            padding: 10px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+    .container .btn2
+    {
+
+
+            position: absolute;
+            top: 380px;
+            left: 290px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 12px;
+            padding: 10px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+    .container .btn3
+    {
+
+
+            position: absolute;
+            top: 440px;
+            left: 290px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 12px;
+            padding: 10px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+
+    .div_h1_map
+    {
+        height:40px;
+    }
+
+    .div_map
+    {
+        height:403px;
+    }
+
+    .sec_2
+    {
+        margin-top:30px;
+    }
+
+    .sec_3
+    {
+        margin-top:30px;
+    }
+
+    .sec_search
+    {
+        transform:scale(0.8);
+    }
+
+    .map_venezuela
+    {
+        transform:scale(1);
+    }
+    
+    .columns
+    {
+        width:534.4px;
+        height:1160px;
+        padding-left:32.8px;
+        padding-right:32.8px;
+    }
+    
+    .colum
+    {
+        width:160px;
+        height:1160px;
+    }
+    
+    .experience
+    {
+        height:400px;
+    }
+    
+    .exp_img
+    {
+        height:160px;
+    }
+    
+    .exp_text_title
+    {
+        font-size:15px;
+        margin-left:5.6px;
+        margin-right:5.6px;  
+    }
+
+    .exp_text
+    {
+        font-size:13.6px;
+        margin-left:5.6px;
+        margin-right:5.6px;
+    } 
+
+
+
+    h1
+    {
+        font-size:22px;
+    }
+
+    .menu-button
+    {
+        font-size:10px;
+    }
+
+    .button_nav_1
+    {
+        font-size:10px;
+    }
+
+    .logo
+    {
+        transform:scale(0.8);        
+    }
+
+    .foot_text_1
+    {
+        transform:scale(0.8); 
+    }
+
+    .div_footer_parent
+    {
+        transform:scale(0.8); 
+    }
+
+    .ubi_sec_1_img
+    {
+        height:320px;
+    }
+
+    .ubi_text
+    {
+        font-size:14.4px; 
+    }
+
+    .columns_2
+    {
+        flex-direction:column;
+    }
+
+    .colum_2
+    {
+        margin-bottom:100px;
+        width:300px;
+        height:700px;
+    }
+
+    .media
+    {
+        height:300px;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .sec_1
+    {
+        height:385px;
+        margin-bottom:-60px;
+    }
+
+
+
+
+
+    .container .btn
+    {
+
+
+            position: absolute;
+            top: 320px;
+            left: 220px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 8px;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+    .container .btn2
+    {
+
+
+            position: absolute;
+            top: 360px;
+            left: 220px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 8px;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+    .container .btn3
+    {
+
+
+            position: absolute;
+            top: 400px;
+            left: 220px;
+        
+            display: flex;
+            
+            color: white;
+            font-size: 8px;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .div_h1_map
+    {
+        height:25px;
+    }
+
+    .div_map
+    {
+        height:360px;
+        margin-top:-30px;
+    }
+    
+    .sec_2
+    {
+        margin-top:20px;
+    }
+
+    .sec_3
+    {
+        margin-top:40px;
+    }
+
+    .sec_search
+    {
+        transform:scale(0.4);
+    }
+
+    .map_venezuela
+    {
+        transform:scale(0.7);
+    }
+
+    .columns
+    {
+        width:267.2px;
+        height:580px;
+        padding-left:16.4px;
+        padding-right:16.4px;
+    }
+    
+    .colum
+    {
+        width:80px;
+        height:590px;
+    }
+    
+    .experience
+    {
+        height:180px;
+    }
+    
+    .exp_img
+    {
+        height:80px;
+    }
+    
+    .exp_text_title
+    {
+        font-size:7px;
+        margin-left:2.8px;
+        margin-right:2.8px;  
+    }
+
+    .exp_text
+    {
+        font-size:6.8px;
+        margin-left:2.8px;
+        margin-right:2.8px; 
+    } 
+
+    h1
+    {
+        font-size:16px;
+    }
+
+    .foot_text_1
+    {
+        transform:scale(0.5); 
+    }
+
+    .div_footer_parent
+    {
+        transform:scale(0.5); 
+    }
+
+    footer
+    {
+        padding-left:5%;
+    }
+
+    .ubi_sec_1_img
+    {
+        height:200px;
+    }
+
+    .ubi_text
+    {
+        font-size:9px; 
+    }
+
+    .columns_2
+    {
+        flex-direction:column;
+    }
+
+    .colum_2
+    {
+        margin-bottom:80px;
+        width:200px;
+        height:480px;
+    }
+
+
+
+
+    .media
+    {
+        height:150px;
+    }
+}

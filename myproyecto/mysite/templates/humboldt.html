@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.8/xlsx.full.min.js"></script>
+<html lang="es-ES">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Search Projects</title> 
+        <link href="./static/css/styles.css" rel="stylesheet">
+        <link rel="icon" href="./static/images/myicon.png">
+	</head>
+
+    <body>
+        <header class="desktop">
+            <a href="./index.html">
+                <img class="logo" src="./static/images/mylogo.png" alt="Logo">
+            </a>
+            <nav>
+                <ul class="ul_nav">
+                    <li><a href="./index.html">MAIN PAGE</a></li>
+                    <li><a href="https://www.ntnu.no/">NTNU</a></li>
+                    <li><a href="https://www.ntnu.no/kontakt">CONTACT</a></li>
+                </ul>  
+            </nav>
+            <div>
+                <a class="button_nav_1" href="#">Iniciar Sesión</a>
+                <a class="button_nav_2" href="#">Registrarse</a>                
+            </div>
+        </header>
+
+        <header class="tablet_mobile">
+            <div class="dropdown">
+                <button onclick="dropButton()" class="menu-button">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="./index.html">MAIN PAGE</a>
+                    <a href="https://www.ntnu.edu/">NTNU</a>
+                    <a href="https://www.ntnu.no/kontakt">CONTACT</a>
+                </div>
+            </div>
+            <a href="./index.html">
+                <img class="logo" src="./static/images/mylogo.png" alt="Logo">
+            </a>
+            <a class="button_nav_1" href="#">Login</a>
+        </header>
+
+        <main>
+            <div class="ubi_sec_1">
+                <img class="ubi_sec_1_img" src="./static/images/thelab.jpg" alt="Humboldt">
+                <div class="ubi_sec_1_text">
+                 
+                    <style>
+                    
+                        #myInput
+                    {
+                        height:30px;
+                        width:500px;
+                        border-style:solid;
+                        border-color:grey;
+                    }
+
+                    </style>    
+                    
+                    <h1>Search Projects</h1>
+                    <br>
+                    <br>
+
+                    <label for="filter1">Filter by status: </label>
+                        <select id="filter1" onchange="filterTable()">
+                          <option value="all">All</option>
+                          <option value="Active">Active</option>
+                          <option value="Concluded">Concluded</option>
+                        </select>
+                      
+                        <label for="filter2">Filter by language:</label>
+                        <select id="filter2" onchange="filterTable()">
+                          <option value="all">All</option>
+                          <option value="en">en</option>
+                          <option value="no">no</option>
+                          <option value="nb">nb</option>
+                        </select>
+<br>
+<br>
+                        <label for="startDate">Start Date:</label>
+                        <input type="text" id="startDate" placeholder="e.g. Aug. 1, 2010">
+                        <label for="endDate">End Date:</label>
+                        <input type="text" id="endDate" placeholder="e.g. Aug. 31, 2010">
+                        <button onclick="filterTable()">Filter</button>
+
+                      
+                        <label for="search">Search:</label>
+
+
+                        
+                        <input type="text" id="search" oninput="filterTable()" placeholder="Type to search">
+
+                        <button onclick="openColumnsSelectionDialog()">Export to Excel</button>
+
+        
+                    <div class="sec_search">
+
+                        <table id="myTable">
+  <thead>
+    <tr>
+      <th class="hidden-column">ID</th>
+      <th class="hidden-column">STATUS</th>
+      <th>TITLE</th>
+      <th>DEPARTMENT</th>
+      <th class="hidden-column">START_DATE</th>
+      <th class="hidden-column">END_DATE</th>
+      <th class="hidden-column">MAIN LANGUAGE</th>
+      
+
+      
+      <th>COORDINATING INSTITUTION</th>
+      <th>PROJECT MANAGER</th>
+
+      <th class="hidden-column">PARTICIPANT1</th>
+      <th class="hidden-column">PARTICIPANT2</th>
+      <th class="hidden-column">PARTICIPANT3</th>
+      <th class="hidden-column">PARTICIPANT4</th>
+      <th class="hidden-column">PARTICIPANT5</th>
+      <th class="hidden-column">PARTICIPANT6</th>
+      <th class="hidden-column">PARTICIPANT7</th>
+      <th class="hidden-column">PARTICIPANT8</th>
+      <th class="hidden-column">PARTICIPANT9</th>
+      <th class="hidden-column">PARTICIPANT10</th>
+
+      <th class="hidden-column">PPROJECT CATEGORY1</th>
+      <th class="hidden-column">PPROJECT CATEGORY2</th>
+      <th class="hidden-column">PPROJECT CATEGORY3</th>
+      <th class="hidden-column">PPROJECT CATEGORY4</th>
+      <th class="hidden-column">PPROJECT CATEGORY5</th>
+
+      <th class="hidden-column">Academic Discipline 1</th>
+      <th class="hidden-column">Academic Discipline 2</th>
+      <th class="hidden-column">Academic Discipline 3</th>
+      <th class="hidden-column">Academic Discipline 4</th>
+      <th class="hidden-column">Academic Discipline 5</th>
+
+      
+      <th class="hidden-column">Keyword 1</th>
+      <th class="hidden-column">Keyword 2</th>
+      <th class="hidden-column">Keyword 3</th>
+      <th class="hidden-column">Keyword 4</th>
+      <th class="hidden-column">Keyword 5</th>
+
+      <th class="hidden-column">Summary</th>
+
+      <th class="hidden-column">Funding 1</th>
+      <th class="hidden-column">Funding 2</th>
+      <th class="hidden-column">Funding 3</th>
+      <th class="hidden-column">Funding 4</th>
+      <th class="hidden-column">Funding 5</th>
+
+      <th class="hidden-column">Total Amount</th>
+
+      <th class="hidden-column">Currency</th>
+      <th class="hidden-column">Contact Email</th>
+      <th class="hidden-column">Contact Phone</th>
+
+     
+    </tr>
+  </thead>
+  <tbody>
+    {% for instance in data%}
+    <tr class="clickable-row">
+      <td class="hidden-column">{{instance.fields.id_project}}</td>
+      <td class="hidden-column">{{instance.fields.status}}</td>
+      <td>{{instance.fields.title}}</td>
+      <td>{{instance.fields.department}}</td>
+      <td class="hidden-column">{{instance.fields.start_date}}</td>
+      <td class="hidden-column">{{instance.fields.end_date}}</td>
+      <td class="hidden-column">{{instance.fields.main_language}}</td>
+      <td>{{instance.fields.coordinating_institution}}</td>
+      <td><a href="/managers/{{ instance.fields.manager_name }}">{{ instance.fields.manager_name }}</a></td>
+
+    
+
+
+
+      <td class="hidden-column">{{instance.fields.participant1_name}} {{instance.fields.participant1_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant2_name}} {{instance.fields.participant2_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant3_name}} {{instance.fields.participant3_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant4_name}} {{instance.fields.participant4_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant5_name}} {{instance.fields.participant5_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant6_name}} {{instance.fields.participant6_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant7_name}} {{instance.fields.participant7_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant8_name}} {{instance.fields.participant8_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant9_name}} {{instance.fields.participant9_surname}}</td>
+      <td class="hidden-column">{{instance.fields.participant10_name}} {{instance.fields.participant10_surname}}</td>
+
+      <td class="hidden-column">{{instance.fields.project_category1}}</td>
+      <td class="hidden-column">{{instance.fields.project_category2}}</td>
+      <td class="hidden-column">{{instance.fields.project_category3}}</td>
+      <td class="hidden-column">{{instance.fields.project_category4}}</td>
+      <td class="hidden-column">{{instance.fields.project_category5}}</td>
+
+      <td class="hidden-column">{{instance.fields.academic_discipline1}}</td>
+      <td class="hidden-column">{{instance.fields.academic_discipline2}}</td>
+      <td class="hidden-column">{{instance.fields.academic_discipline3}}</td>
+      <td class="hidden-column">{{instance.fields.academic_discipline4}}</td>
+      <td class="hidden-column">{{instance.fields.academic_discipline5}}</td>
+
+      <td class="hidden-column">{{instance.fields.keyword1}}</td>
+      <td class="hidden-column">{{instance.fields.keyword2}}</td>
+      <td class="hidden-column">{{instance.fields.keyword3}}</td>
+      <td class="hidden-column">{{instance.fields.keyword4}}</td>
+      <td class="hidden-column">{{instance.fields.keyword5}}</td>
+
+      <td class="hidden-column">{{instance.fields.summary}}</td>
+
+      <td class="hidden-column">{{instance.fields.funding1}}</td>
+      <td class="hidden-column">{{instance.fields.funding2}}</td>
+      <td class="hidden-column">{{instance.fields.funding3}}</td>
+      <td class="hidden-column">{{instance.fields.funding4}}</td>
+      <td class="hidden-column">{{instance.fields.funding5}}</td>
+
+      <td class="hidden-column">{{instance.fields.total_funding_amount}}</td>
+      <td class="hidden-column">{{instance.fields.currency}}</td>
+      <td class="hidden-column">{{instance.fields.contact_email}}</td>
+      <td class="hidden-column">{{instance.fields.contact_phone}}</td>
+
+    
+
+      
+
+
+
+
+
+    </tr>
+    <tr class="hidden-row">
+      <td colspan="7">
+        <div class="row-details">
+          <p>Start Date: {{ instance.fields.start_date }}</p>
+          <p>End Date: {{ instance.fields.end_date }}</p>
+          <p>Status: {{ instance.fields.status }}</p>
+
+
+          <p>Participants: {{ instance.fields.participant1_name }} {{ instance.fields.participant1_surname }}, {{ instance.fields.participant2_name }} {{ instance.fields.participant2_surname }},{{ instance.fields.participant3_name }} {{ instance.fields.participant3_surname }}, {{ instance.fields.participant4_name }} {{ instance.fields.participant4_surname }}, {{ instance.fields.participant5_name }} {{ instance.fields.participant5_surname }},{{ instance.fields.participant6_name }} {{ instance.fields.participant6_surname }},{{ instance.fields.participant7_name }} {{ instance.fields.participant7_surname }},{{ instance.fields.participant8_name }} {{ instance.fields.participant8_surname }},{{ instance.fields.participant9_name }} {{ instance.fields.participant9_surname }},{{ instance.fields.participant10_name }} {{ instance.fields.participant10_surname }} </p>
+          <p>Academic Disciplines: {{ instance.fields.academic_discipline1 }}, {{instance.fields.academic_discipline2 }}, {{instance.fields.academic_discipline3}}, {{instance.fields.academic_discipline4}},{{instance.fields.academic_discipline5}}  </p>
+          <p>Keywords: {{ instance.fields.keyword1 }}, {{instance.fields.keyword2 }}, {{instance.fields.keyword3}}, {{instance.fields.keyword4}},{{instance.fields.keyword5}}  </p>          
+          <p>Summary: {{ instance.fields.summary }}</p>
+          <p>Total Funding: {{ instance.fields.total_funding_amount }} {{ instance.fields.currency }}</p>
+
+          <p>Contact Email: {{ instance.fields.contact_email }}</p>
+          <p>Contact Phone: {{ instance.fields.contact_phone }}</p>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<style>
+  .hidden-column {
+    display: none;
+  }
+</style>
+                          
+                          
+                          
+                          <script>
+                            // Add click event listener to all clickable rows
+                            var rows = document.querySelectorAll(".clickable-row");
+                            rows.forEach(function(row) {
+                              row.addEventListener("click", function() {
+                                // Toggle the visibility of the hidden row beneath the clicked row
+                                var hiddenRow = row.nextElementSibling;
+                                hiddenRow.classList.toggle("show");
+                              });
+                            });
+                          </script>
+                        
+                          <style>
+                          .hidden-row {
+                            display: none;
+                          }
+                          
+                          .show {
+                            display: table-row;
+                          }
+                        
+                        </style>
+
+
+        
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            
+
+            <style>
+                #myTable {
+                    border-collapse: collapse;
+                    width: 100%;
+                    border: 1px solid #ddd;
+                    font-size: 18px;
+                    
+                  }
+
+                  
+                  #myTable th, #myTable td {
+                    text-align: center;
+                    
+                  }
+                  
+                  #myTable tr {
+                    border-bottom: 1px solid #ddd;
+                  }
+                  
+                  #myTable tr.header, #myTable tr:hover {
+                    background-color: #f1f1f1;
+                  }
+            </style>
+            <style>
+                label {
+                  display: inline-block;
+                  margin-bottom: 5px;
+                }
+                select, input[type="text"] {
+                  padding: 5px;
+                  font-size: 12px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  margin-right: 6px;
+                  margin-bottom: 6px;
+                }
+                table {
+                  border-collapse: collapse;
+                  margin-bottom: 15px;
+                }
+                th, td {
+                  padding: 10px;
+                  text-align: left;
+                  border: 1px solid #ccc;
+                }
+              </style>
+
+
+                <script>
+
+                    function hideRows() {
+                        var rows = document.querySelectorAll("#myTable tr");
+                        for (var i = 1; i < rows.length; i++) {
+                          rows[i].classList.remove("hidden-row");
+                        }
+                        var hiddenRows = document.querySelectorAll("#myTable tr.hidden-row");
+                        for (var i = 0; i < hiddenRows.length; i++) {
+                          hiddenRows[i].classList.add("hidden-row");
+                        }
+                      }
+                      
+                      function filterTable() {
+                        var startDateString = document.getElementById("startDate").value;
+                        var endDateString = document.getElementById("endDate").value;
+                        var startDate = new Date(startDateString);
+                        var endDate = new Date(endDateString);
+                        
+                        var filter1 = document.getElementById("filter1").value.toLowerCase();
+                        var filter2 = document.getElementById("filter2").value.toLowerCase();
+                        var search = document.getElementById("search").value.toLowerCase();
+                        var rows = document.querySelectorAll("#myTable tr.clickable-row");
+                        
+                        var hiddenRows = document.querySelectorAll("#myTable tr.hidden-row");
+                        for (var i = 0; i < hiddenRows.length; i++) {
+                          hiddenRows[i].style.display = "none";
+                          hiddenRows[i].classList.remove("shown-row");
+                        }
+                      
+                        for (var i = 0; i < rows.length; i++) {
+                          var cells = rows[i].querySelectorAll("td");
+                          var showRow = false;
+                      
+                          var rowDateString = cells[4].innerHTML;
+                          var rowDateString_end = cells[5].innerHTML;
+                          var rowDate = new Date(rowDateString);
+                          var rowDate_end = new Date(rowDateString_end);
+                      
+                          if ((filter1 == "all" || cells[1].innerHTML.toLowerCase().indexOf(filter1) > -1) &&
+                              (filter2 == "all" || cells[6].innerHTML.toLowerCase().indexOf(filter2) > -1)) {
+                            showRow = true;
+                          }
+                      
+                          if ((rowDate.getTime() < startDate.getTime()) ||
+                              (rowDate_end.getTime() > endDate.getTime())) {
+                            showRow = false;
+                          }
+                      
+                          if (showRow) {
+                            if (search == "") {
+                              rows[i].style.display = "";
+                            } else {
+                              var match = false;
+                              for (var j = 0; j < cells.length; j++) {
+                                if (cells[8].innerHTML.toLowerCase().indexOf(search) > -1) {
+                                  match = true;
+                                  break;
+                                }
+                              }
+                              if (match) {
+                                rows[i].style.display = "";
+                              } else {
+                                rows[i].style.display = "none";
+                              }
+                            }
+                          } else {
+                            rows[i].style.display = "none";
+                          }
+                        }
+                      }
+                      
+                      function showHiddenRow(row) {
+                        row.classList.add("shown-row");
+                        var hiddenRow = row.nextElementSibling;
+                        hiddenRow.style.display = "";
+                      }
+                      
+                      var rows = document.querySelectorAll("#myTable tr.clickable-row");
+                      for (var i = 0; i < rows.length; i++) {
+                        rows[i].addEventListener("click", function() {
+                          if (this.classList.contains("shown-row")) {
+                            this.classList.remove("shown-row");
+                            this.nextElementSibling.style.display = "none";
+                          } else {
+                            showHiddenRow(this);
+                          }
+                        });
+                      }
+                      
+                      
+                      
+                      
+                    </script>
+                    
+
+
+
+            <div class="ubi_sec_2">
+               <style>
+                button {
+                    background-color: #4CAF50;
+                    border: none;
+                    color: white;
+                    padding: 8px 16px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 14px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    border-radius: 4px;
+                  }
+                  button:hover {
+                    background-color: #3e8e41;
+                  }
+                  .active {
+                    background-color: #ccc;
+                  }
+                </style>
+
+                <div class="columns_2">
+
+
+
+                   
+
+
+                    
+
+                    </div>
+                </div>
+
+                      <div id="popup-container">
+                        <div id="popup">
+                          <div id="popup-close" onclick="closePopup()">&times;</div>
+                          <div id="popup-content"></div>
+                        </div>
+                      </div>
+
+                      <style>
+                        #popup-container {
+                          display: none;
+                          position: fixed;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          background-color: rgba(0, 0, 0, 0.5);
+                          z-index: 9999;
+                        }
+                      
+                        #popup {
+                          position: relative;
+                          top: 50%;
+                          left: 50%;
+                          transform: translate(-50%, -50%);
+                          width: 300px;
+                          height: 200px;
+                          background-color: white;
+                          padding: 20px;
+                          text-align: center;
+                          font-size: 18px;
+                        }
+                      
+                        #popup-close {
+                          position: absolute;
+                          top: 10px;
+                          right: 10px;
+                          font-size: 20px;
+                          cursor: pointer;
+                        }
+                      </style>
+
+
+                      <script>
+                        function showDetails(funding_amount, currency, contact_email, contact_phone) {
+                          const content = `Funding amount: ${funding_amount}<br>Currency: ${currency}<br>Contact email: ${contact_email}<br>Contact phone: ${contact_phone}`;
+                          const popupContent = document.getElementById('popup-content');
+                          popupContent.innerHTML = content;
+                          document.getElementById('popup-container').style.display = 'block';
+                        }
+                      
+                        function closePopup() {
+                          document.getElementById('popup-container').style.display = 'none';
+                        }
+                      </script>
+<script> 
+
+    function downloadCSV() {
+        const table = document.getElementById("myTable");
+        let csv = "";
+        for (let i = 0; i < table.rows.length; i++) {
+          const row = table.rows[i];
+          for (let j = 0; j < row.cells.length; j++) {
+            csv += row.cells[j].innerText + ",";
+          }
+          csv += "\n";
+        }
+        const encodedUri = encodeURI("data:text/csv;charset=utf-8," + csv);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "table.csv");
+        document.body.appendChild(link);
+        link.click();
+      }
+                    </script>
+
+
+                <script>
+
+
+
+                  function openColumnsSelectionDialog() {
+                    // Get the table headers
+                    const headers = Array.from(document.querySelectorAll("#myTable th")).map(th => th.textContent);
+                  
+                    // Create a dialog box to select the columns
+                    const dialog = document.createElement("div");
+                    dialog.innerHTML = `
+                      <h2>Select columns to export</h2>
+                      ${headers.map(header => `
+                        <label>
+                          <input type="checkbox" name="columns" value="${header}" checked>
+                          ${header}
+                        </label>
+                      `).join("")}
+                      <button id="export-btn">Export</button>
+                      <button id="close-btn">Close</button>
+                    `;
+                    dialog.style.position = "absolute";
+                    dialog.style.top = "50%";
+                    dialog.style.left = "50%";
+                    dialog.style.transform = "translate(-50%, -50%)";
+                    dialog.style.backgroundColor = "white";
+                    dialog.style.padding = "20px";
+                    dialog.style.border = "1px solid black";
+                    document.body.appendChild(dialog);
+                  
+                    function exportToExcel() {
+                      // Get the selected columns
+                      const selectedColumns = Array.from(dialog.querySelectorAll("input[name='columns']:checked")).map(input => input.value);
+                  
+                      // Apply the filter to the table
+                      filterTable();
+                  
+                      // Create a new table to hold only the visible rows and selected columns
+                      const visibleRowsTable = document.createElement("table");
+                      visibleRowsTable.innerHTML = `
+                        <thead>
+                          <tr>
+                            ${selectedColumns.map(column => `<th>${column}</th>`).join("")}
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      `;
+                  
+                      // Copy the visible rows and selected columns to the new table
+                      const rows = document.querySelectorAll("#myTable tr.clickable-row");
+                      for (let i = 0; i < rows.length; i++) {
+                        if (rows[i].style.display !== "none") {
+                          const newRow = document.createElement("tr");
+                          selectedColumns.forEach(column => {
+                            const cell = rows[i].querySelector(`td:nth-child(${headers.indexOf(column) + 1})`);
+                            newRow.appendChild(cell.cloneNode(true));
+                          });
+                          visibleRowsTable.querySelector("tbody").appendChild(newRow);
+                        }
+                      }
+                  
+                      // Convert the new table to a workbook
+                      const wb = XLSX.utils.table_to_book(visibleRowsTable, { sheet: "Sheet JS" });
+                  
+                      // Save the workbook as an Excel file
+                      XLSX.writeFile(wb, "table.xlsx");
+                  
+                      // Remove the dialog box from the DOM
+                      document.body.removeChild(dialog);
+                    }
+                  
+                    // Add event listener to "Export" button
+                    const exportBtn = document.querySelector("#export-btn");
+                    exportBtn.addEventListener("click", exportToExcel);
+                  
+                    // Add event listener to "Close" button
+                    const closeBtn = document.querySelector("#close-btn");
+                    closeBtn.addEventListener("click", () => {
+                      document.body.removeChild(dialog);
+                    });
+                  }
+                  
+                  
+
+
+
+                    </script>
+
+
+
+
+
+                    
+                    
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="foot_text_1">Healthcare Projects</p>  
+            <div class="div_footer_parent">
+                <div class="div_footer_child">
+                    <p class="foot_text_2">FAQ</p>
+                    <img class="social_icons" src="./static/images/social_instagram.png.png" alt="Instagram">
+                    <img class="social_icons" src="./static/images/social_youtube.png.png" alt="Youtube">
+                    <img class="social_icons" src="./static/images/social_facebook.png.png" alt="Facebook">
+                </div>
+                <div class="div_footer_child">
+                    <p class="foot_text_2">Terms and Conditions</p>
+                </div>
+            </div>       
+        </footer>
+        
+        <script>
+            /*Botón Menú*/
+            function dropButton() 
+            {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Cerrar botón al tocar fuera
+            window.onclick = function(event) 
+            {
+                if (!event.target.matches('.menu-button')) 
+                {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) 
+                    {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) 
+                        {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }  
+        </script>
+    </body>
+</html>
